@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChatGPT代充值</title>
+  <title>我的网站</title>
   <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js"></script>
-  <!-- 将以下代码替换为从Firebase控制台获取的配置 -->
-<script type="module">
+  <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js"></script><script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-analytics.js";
@@ -30,8 +28,32 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>
-  </head>
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 36px;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: #1e90ff;
+    }
+  </style>
+</head>
 <body>
+  <h1>欢迎来到我的网站</h1>
+  <h2>请关注我的微信</h2>
+  <img src="your_wechat_qrcode.jpg" alt="微信二维码" width="200">
+  <h2>请访问我的淘宝店铺</h2>
+  <p>
+    <a href="your_taobao_shop_link" target="_blank">点击这里访问我的淘宝店铺</a>
+  </p>
+  
   <h1>登录/注册</h1>
   <div id="user-info" style="display:none;">
     <p>欢迎，<span id="user-email"></span>！</p>
@@ -64,52 +86,26 @@
         .then(() => {
           document.getElementById('login-form').reset();
         })
-        .catch((error) => {
-          console.error('注册失败:', error);
-        });
+        .catch((error) => {console.error('注册失败:', error);
     });
+});
 
-    document.getElementById('logout').addEventListener('click', () => {
-      firebase.auth().signOut();
-    });
+document.getElementById('logout').addEventListener('click', () => {
+  firebase.auth().signOut();
+});
 
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        document.getElementById('user-email').textContent = user.email;
-        document.getElementById('user-info').style.display = 'block';
-        document.getElementById('login-form').style.display = 'none';
-        document.getElementById('register').style.display = 'none';
-      } else {
-        document.getElementById('user-info').style.display = 'none';
-        document.getElementById('login-form').style.display = 'block';
-        document.getElementById('register').style.display = 'block';
-      }
-    });
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    document.getElementById('user-email').textContent = user.email;
+    document.getElementById('user-info').style.display = 'block';
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('register').style.display = 'none';
+  } else {
+    document.getElementById('user-info').style.display = 'none';
+    document.getElementById('login-form').style.display = 'block';
+    document.getElementById('register').style.display = 'block';
+  }
+});
   </script>
-  <style>
-    body {
-      font-family: "Arial", sans-serif;
-      text-align: center;
-      background-color: #f0f0f0;
-      padding: 50px;
-    }
-    h1 {
-      font-size: 36px;
-      color: #333;
-    }
-    a {
-      text-decoration: none;
-      color: #1e90ff;
-    }
-  </style>
-</head>
-<body>
-  <h1>ChatGPT代充值</h1>
-  <h2>请添加客服微信，以了解更多详情</h2>
-  <img src="jm.jpg" alt="微信二维码" width="200">
-  <h2>请访问淘宝店铺</h2>
-  <p>
-    <a href="https://item.taobao.com/item.htm?ft=t&id=713916357092">点击这里访问我的淘宝店铺</a>
-  </p>
 </body>
 </html>
