@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GPT/Midjourney代充值</title>
-<script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-auth-compat.js"></script>
+  <title>我的网站</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-auth-compat.js"></script>
+  <!-- 将以下代码替换为从Firebase控制台获取的配置 -->
+  <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-analytics.js";
@@ -14,15 +16,16 @@
 
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
- const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-auth-domain",
-  projectId: "your-project-id",
-  storageBucket: "your-storage-bucket",
-  messagingSenderId: "your-messaging-sender-id",
-  appId: "your-app-id"
-};
-firebase.initializeApp(firebaseConfig);
+  const firebaseConfig = {
+    apiKey: "AIzaSyDlzu5bBqXfYWdfGkYE56Vfzjxj7eAbzU4",
+    authDomain: "hiwo-636e4.firebaseapp.com",
+    projectId: "hiwo-636e4",
+    storageBucket: "hiwo-636e4.appspot.com",
+    messagingSenderId: "474632821612",
+    appId: "1:474632821612:web:540b612d20a499acffb149",
+    measurementId: "G-RDNXXY1SZ4"
+  };
+
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
@@ -45,11 +48,12 @@ firebase.initializeApp(firebaseConfig);
   </style>
 </head>
 <body>
-  <h1>GPT/Midjourney代充值</h1>
-  <h2>请添加客服微信</h2>
-  <img src="jm.jpg" alt="微信二维码" width="200">
+  <h1>欢迎来到我的网站</h1>
+  <h2>请关注我的微信</h2>
+  <img src="your_wechat_qrcode.jpg" alt="微信二维码" width="200">
+  <h2>请访问我的淘宝店铺</h2>
   <p>
-    <a href="https://item.taobao.com/item.htm?ft=t&id=713916357092" target="_blank">点击这里访问我的淘宝店铺</a>
+    <a href="your_taobao_shop_link" target="_blank">点击这里访问我的淘宝店铺</a>
   </p>
   
   <h1>登录/注册</h1>
@@ -68,7 +72,7 @@ firebase.initializeApp(firebaseConfig);
       e.preventDefault();
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-      firebase.auth().signInWithEmailAndPassword(email, password)
+      firebaseAuth.signInWithEmailAndPassword(email, password)
         .then(() => {
           document.getElementById('login-form').reset();
         })
@@ -80,19 +84,20 @@ firebase.initializeApp(firebaseConfig);
     document.getElementById('register').addEventListener('click', () => {
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-      firebase.auth().createUserWithEmailAndPassword(email, password)
+      firebaseAuth.createUserWithEmailAndPassword(email, password)
         .then(() => {
           document.getElementById('login-form').reset();
         })
-        .catch((error) => {console.error('注册失败:', error);
+        .catch((error) => {
+          console.error('注册失败:', error);
+        });
     });
+
+    document.getElementById('logout').addEventListener('click', () =>
+  firebaseAuth.signOut();
 });
 
-document.getElementById('logout').addEventListener('click', () => {
-  firebase.auth().signOut();
-});
-
-firebase.auth().onAuthStateChanged((user) => {
+firebaseAuth.onAuthStateChanged((user) => {
   if (user) {
     document.getElementById('user-email').textContent = user.email;
     document.getElementById('user-info').style.display = 'block';
