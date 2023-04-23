@@ -66,27 +66,27 @@
   </form>
   <button id="register">注册</button>
   <script>
-    document.getElementById('login-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(() => {
-          document.getElementById('login-form').reset();
-        })
-        .catch((error) => {
-          console.error('登录失败:', error);
-        });
+document.getElementById('login-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+      document.getElementById('login-form').reset();
+    })
+    .catch((error) => {
+      console.error('登录失败:', error);
     });
+});
 
-    document.getElementById('register').addEventListener('click', () => {
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(() => {
-          document.getElementById('login-form').reset();
-        })
-        .catch((error) => {
+document.getElementById('register').addEventListener('click', () => {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(() => {
+      document.getElementById('login-form').reset();
+    })
+    .catch((error) => {
       console.error('注册失败:', error);
     });
 });
