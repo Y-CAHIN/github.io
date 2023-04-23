@@ -70,7 +70,7 @@
       e.preventDefault();
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-      firebaseAuth.signInWithEmailAndPassword(email, password)
+      firebase.auth().signInWithEmailAndPassword(email, password)
         .then(() => {
           document.getElementById('login-form').reset();
         })
@@ -82,7 +82,7 @@
     document.getElementById('register').addEventListener('click', () => {
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-      firebaseAuth.createUserWithEmailAndPassword(email, password)
+      firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(() => {
           document.getElementById('login-form').reset();
         })
@@ -92,10 +92,10 @@
 });
 
 document.getElementById('logout').addEventListener('click', () => {
-  firebaseAuth.signOut();
+  firebase.auth().signOut();
 });
 
-firebaseAuth.onAuthStateChanged((user) => {
+firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     document.getElementById('user-email').textContent = user.email;
     document.getElementById('user-info').style.display = 'block';
