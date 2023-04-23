@@ -30,6 +30,61 @@
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>
+  </head>
+<body>
+  <h1>登录/注册</h1>
+  <div id="user-info" style="display:none;">
+    <p>欢迎，<span id="user-email"></span>！</p>
+    <button id="logout">注销</button>
+  </div>
+  <form id="login-form">
+    <input type="email" id="email" placeholder="电子邮件">
+    <input type="password" id="password" placeholder="密码">
+    <button type="submit">登录</button>
+  </form>
+  <button id="register">注册</button>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(() => {
+          document.getElementById('login-form').reset();
+        })
+        .catch((error) => {
+          console.error('登录失败:', error);
+        });
+    });
+
+    document.getElementById('register').addEventListener('click', () => {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(() => {
+          document.getElementById('login-form').reset();
+        })
+        .catch((error) => {
+          console.error('注册失败:', error);
+        });
+    });
+
+    document.getElementById('logout').addEventListener('click', () => {
+      firebase.auth().signOut();
+    });
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        document.getElementById('user-email').textContent = user.email;
+        document.getElementById('user-info').style.display = 'block';
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register').style.display = 'none';
+      } else {
+        document.getElementById('user-info').style.display = 'none';
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('register').style.display = 'block';
+      }
+    });
   </script>
   <style>
     body {
