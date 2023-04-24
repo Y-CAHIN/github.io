@@ -44,6 +44,23 @@
       text-decoration: none;
       color: #1e90ff;
     }
+      <!-- ...其他元信息、样式和脚本 -->
+  <style>
+    /* ...其他样式 */
+    .news-section {
+      margin-top: 50px;
+    }
+    .news-section h2 {
+      font-size: 24px;
+      color: #333;
+    }
+    .news-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .news-list li {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -107,6 +124,16 @@ firebase.auth().onAuthStateChanged((user) => {
     document.getElementById('register').style.display = 'block';
   }
 });
+    
+  <section class="news-section">
+    <h2>每日新闻</h2>
+    <ul class="news-list">
+      <li><a href="https://your_wechat_article_1_link" target="_blank">新闻标题1</a></li>
+      <li><a href="https://your_wechat_article_2_link" target="_blank">新闻标题2</a></li>
+      <li><a href="https://your_wechat_article_3_link" target="_blank">新闻标题3</a></li>
+      <!-- ...其他新闻链接 -->
+    </ul>
+  </section>
   </script>
 </body>
 </html>
