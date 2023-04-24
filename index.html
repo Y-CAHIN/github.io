@@ -4,31 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChatGPT/Midjourney订阅</title>
-<script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth-compat.js"></script>
-  <!-- 将以下代码替换为从Firebase控制台获取的配置 -->
-  <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyDlzu5bBqXfYWdfGkYE56Vfzjxj7eAbzU4",
-    authDomain: "hiwo-636e4.firebaseapp.com",
-    projectId: "hiwo-6364",
-    storageBucket: "hiwo-636e4.appspot.com",
-    messagingSenderId: "474632821612",
-    appId: "1:474632821612:web:540b612d20a499acffb149",
-    measurementId: "G-RDNXXY1SZ4"
-  };
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDlzu5bBqXfYWdfGkYE56Vfzjxj7eAbzU4",
+      authDomain: "hiwo-636e4.firebaseapp.com",
+      projectId: "hiwo-6364",
+      storageBucket: "hiwo-636e4.appspot.com",
+      messagingSenderId: "474632821612",
+      appId: "1:474632821612:web:540b612d20a499acffb149",
+      measurementId: "G-RDNXXY1SZ4"
+    };
+    firebase.default.initializeApp(firebaseConfig);
+  </script>
   <style>
     body {
       font-family: "Arial", sans-serif;
@@ -44,9 +33,6 @@
       text-decoration: none;
       color: #1e90ff;
     }
-    /* ...其他元信息、样式和脚本 */
-
-    /* ...其他样式 */
     .news-section {
       margin-top: 50px;
     }
@@ -78,21 +64,19 @@
   </div>
   <form id="login-form">
     <input type="email" id="email" placeholder="电子邮件">
-    <input type="password" id="password" placeholder="密码">
-    <button type="submit">登录</button>
-  </form>
+<input type="password" id="password" placeholder="密码">
+<button type="submit">登录</button>
+</form>
   <button id="register">注册</button>
-
   <section class="news-section">
     <h2>每日新闻</h2>
     <ul class="news-list">
-      <li><a href="https://your_wechat_article_1_link" target="_blank">新闻标题1</a></li>
-      <li><a href="https://your_wechat_article_2_link" target="_blank">新闻标题2</a></li>
-      <li><a href="https://your_wechat_article_3_link" target="_blank">新闻标题3</a></li>
+      <li><a href="https://www.bilibili.com/video/BV1po4y1b7fh/" target="_blank">新闻标题1</a></li>
+      <li><a href="https://www.bilibili.com/video/BV1Qo4y157bR/" target="_blank">新闻标题2</a></li>
+      <li><a href="https://www.bilibili.com/video/BV1v94y127wr/?spm_id_from=333.788.recommend_more_video.0" target="_blank">新闻标题3</a></li>
       <!-- ...其他新闻链接 -->
     </ul>
   </section>
-
   <script src="main.js"></script>
 </body>
 </html>
