@@ -7,16 +7,6 @@
 <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth-compat.js"></script>
   <!-- 将以下代码替换为从Firebase控制台获取的配置 -->
-  <script>
-  const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-auth-domain",
-  projectId: "your-project-id",
-  storageBucket: "your-storage-bucket",
-  messagingSenderId: "your-messaging-sender-id",
-  appId: "your-app-id"
-};
-firebase.default.initializeApp(firebaseConfig);
   <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
@@ -36,7 +26,7 @@ firebase.default.initializeApp(firebaseConfig);
     measurementId: "G-RDNXXY1SZ4"
   };
   // Initialize Firebase
-  const app = default.initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>
   <style>
