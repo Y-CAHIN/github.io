@@ -19,7 +19,7 @@
   const firebaseConfig = {
     apiKey: "AIzaSyDlzu5bBqXfYWdfGkYE56Vfzjxj7eAbzU4",
     authDomain: "hiwo-636e4.firebaseapp.com",
-    projectId: "hiwo-636e4",
+    projectId: "hiwo-6364",
     storageBucket: "hiwo-636e4.appspot.com",
     messagingSenderId: "474632821612",
     appId: "1:474632821612:web:540b612d20a499acffb149",
@@ -44,8 +44,8 @@
       text-decoration: none;
       color: #1e90ff;
     }
-      <!-- ...其他元信息、样式和脚本 -->
-  <style>
+    /* ...其他元信息、样式和脚本 */
+
     /* ...其他样式 */
     .news-section {
       margin-top: 50px;
@@ -82,49 +82,7 @@
     <button type="submit">登录</button>
   </form>
   <button id="register">注册</button>
-  <script>
-document.getElementById('login-form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => {
-      document.getElementById('login-form').reset();
-    })
-    .catch((error) => {
-      console.error('登录失败:', error);
-    });
-});
 
-document.getElementById('register').addEventListener('click', () => {
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(() => {
-      document.getElementById('login-form').reset();
-    })
-    .catch((error) => {
-      console.error('注册失败:', error);
-    });
-});
-
-document.getElementById('logout').addEventListener('click', () => {
-  firebase.auth().signOut();
-});
-
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    document.getElementById('user-email').textContent = user.email;
-    document.getElementById('user-info').style.display = 'block';
-    document.getElementById('login-form').style.display = 'none';
-    document.getElementById('register').style.display = 'none';
-  } else {
-    document.getElementById('user-info').style.display = 'none';
-    document.getElementById('login-form').style.display = 'block';
-    document.getElementById('register').style.display = 'block';
-  }
-});
-    
   <section class="news-section">
     <h2>每日新闻</h2>
     <ul class="news-list">
@@ -134,6 +92,7 @@ firebase.auth().onAuthStateChanged((user) => {
       <!-- ...其他新闻链接 -->
     </ul>
   </section>
-  </script>
+
+  <script src="main.js"></script>
 </body>
 </html>
