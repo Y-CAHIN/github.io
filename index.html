@@ -8,34 +8,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hope-chat.shop</title>
     <style>
-        @media (max-width: 480px) {
-            .content {
-                flex-direction: column;
-            }
-        
-            .product-card {
-               width: 100%;
-               margin-bottom: 20px;
-               padding: 20px;
-               box-sizing: border-box;
-            }
-        
-            .product-card img {
-               width: auto;
-               max-width: 100%;
-               height: auto;
-            }
-        
-            .form-section {
-                flex-direction: column;
-            }
-        
-            form,
-            .wechat-section {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-        }
+@media (max-width: 767px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .product-card {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .product-card img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .form-section {
+        flex-direction: column;
+    }
+
+    form,
+    .wechat-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .product-card {
+        width: 48%;
+        margin-bottom: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+}
         body {
             font-family: "Arial", sans-serif;
             background-color: #f0f0f0;
