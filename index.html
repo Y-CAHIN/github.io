@@ -9,11 +9,18 @@
     <title>hope-chat.shop</title>
     <style>
 .content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 20px;
 }
+        
+        @media (max-width: 480px) {
+    .product-card {
+        margin-right: 0;
+    }
+}
+
         body {
             font-family: "Arial", sans-serif;
             background-color: #f0f0f0;
@@ -41,15 +48,17 @@
             padding: 20px;
         }
 
-        .product-card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 20px;
-            width: 30%;
-            box-sizing: border-box;
-            margin-bottom: 20px;
-        }
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    width: 280px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
 
         .product-card img {
             max-width: 100%;
