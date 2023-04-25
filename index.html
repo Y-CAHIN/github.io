@@ -15,17 +15,11 @@
             margin: 0;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         .header {
             background-color: #232f3e;
             padding: 20px 0;
             text-align: center;
             color: #fff;
-            margin-bottom: 20px;
         }
 
         h1 {
@@ -38,9 +32,6 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 4px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         }
 
         .product-card {
@@ -115,28 +106,28 @@
             color: #333;
             border: none;
             padding: 10px 20px;
-        cursor: pointer;
-        font-weight: bold;
-        border-radius: 4px;
-    }
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+        }
 
-    button:hover {
-        background-color: #f0b91f;
-    }
+        button:hover {
+            background-color: #f0b91f;
+        }
 
-    .wechat-section {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        padding: 20px;
-        width: 48%;
-        box-sizing: border-box;
-    }
+        .wechat-section {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            width: 48%;
+            box-sizing: border-box;
+        }
 
-    .wechat-section h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
+        .wechat-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
 
     .wechat-section img {
         max-width: 200px;
@@ -222,44 +213,37 @@
             <a href="http://www.cnsa.gov.cn/" target="_blank">立即购买</a>
         </div>
     </div>
-<div class="container mt-5">
-    <div class="row">
-        <!-- Card 1 - 填写表单 -->
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img src="img1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">填写表单</h5>
-                    <p class="card-text">请填写表单内容...</p>
-                    <a href="#" class="btn btn-primary">填写表单</a>
-                </div>
-            </div>
-        </div>
+    <div class="form-section">
+        <form action="https://formspree.io/f/xpzekykz" method="POST">
+            <h2>填写表单</h2>
+            <label for="wechat">微信号或手机号:</label>
+            <input type="text" name="wechat" id="wechat" required>
+        <label for="giftcard">ChatGPT/Midjourney账号:</label>
+        <input type="text" name="giftcard" id="giftcard" required>
 
-        <!-- Card 2 - 请添加客服微信 -->
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img src="img2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">请添加客服微信</h5>
-                    <p class="card-text">联系我们的客服微信...</p>
-                    <a href="#" class="btn btn-primary">添加客服</a>
-                </div>
-            </div>
-        </div>
+        <label for="payment_link">付款链接或密码:</label>
+        <input type="text" name="payment_link" id="payment_link" required>
 
-        <!-- Card 3 - B站跟踪 -->
-        <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-                <img src="img3.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">B站跟踪</h5>
-                    <p class="card-text">在B站关注我们的最新动态...</p>
-                    <a href="#" class="btn btn-primary">B站跟踪</a>
-                </div>
-            </div>
-        </div>
-    </div>
+        <button type="submit">提交</button>
+    </form>
+    <div class="wechat-section">
+        <h2>请添加客服微信</h2>
+        <img src="jm.jpg" alt="微信二维码">
 </div>
+</div>
+<section class="news-section">
+<h2>B站跟踪</h2>
+<ul class="news-list">
+<li><a href="https://www.bilibili.com/video/BV1Hm4y1y7xq/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">震惊！无编程基础的中国小伙居然用gpt4独立写出了chatgpt的国内镜像网站！</a></li>
+<li><a href="https://www.bilibili.com/video/BV1nT411p7Wh/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">《你真的毫无价值》 更适合中国宝宝体质！？</a></li>
+<li><a href="https://www.bilibili.com/video/BV1wM4y1m74B/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">我的42秒多元宇宙</a></li>
+<li><a href="https://www.bilibili.com/video/BV1mT411q76v/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2">我终于知道为什么马斯克联合一众科学家叫停gpt4等ai的研发了！！</a></li>
+<li><a href="https://www.bilibili.com/video/BV1jh411V73n/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">chat GPT写出了一个什么玩意</a></li>
+<li><a href="https://www.bilibili.com/video/BV1mM411u74i/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2">woc！文心一言居然证明了哥德巴赫猜想！</a></li>
+<li><a href="https://www.bilibili.com/video/BV1aL411k75w/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2">蠢蠢大怨种,花200快买了一个GPT-4,结果还是假的?!</a></li>
+<!-- ...其他新闻链接 -->
+</ul>
+</section>
+
 </body>
 </html>
