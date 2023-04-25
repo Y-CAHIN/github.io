@@ -1,98 +1,237 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="qQ9iw4sOBuVc19pfhoZMVqCQ-OPcgX7ckzrXbx13NdY" />
-  <title>ChatGPT/Midjourney订阅</title>
-  <style>
-    body {
-      font-family: "Arial", sans-serif;
-      text-align: center;
-      background-color: #f0f0f0;
-      padding: 50px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="qQ9iw4sOBuVc19pfhoZMVqCQ-OPcgX7ckzrXbx13NdY" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hope-chat.shop</title>
+    <style>
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+        
+            .product-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .form-section {
+                flex-direction: column;
+            }
+        
+            form,
+            .wechat-section {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f0f0f0;
+            padding: 50px;
+            color: #333;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #232f3e;
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            width: 30%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .product-card a {
+            display: inline-block;
+            background-color: #f3c416;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .product-card a:hover {
+            background-color: #f0b91f;
+        }
+
+        .form-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            width: 48%;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #f3c416;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #f0b91    f;
     }
-    h1 {
-      font-size: 36px;
-      color: #333;
+
+    .wechat-section {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 20px;
+        width: 48%;
+        box-sizing: border-box;
     }
-    a {
-      text-decoration: none;
-      color: #1e90ff;
+
+    .wechat-section h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
     }
-    .news-section {
-      margin-top: 50px;
+
+    .wechat-section img {
+        max-width: 200px;
+        height: auto;
+        margin-bottom: 15px;
     }
-    .news-section h2 {
-      font-size: 24px;
-      color: #333;
-    }
-    .news-list {
-      list-style-type: none;
-      padding: 0;
-    }
-    .news-list li {
-      margin-bottom: 10px;
-    }
-    form {
-      display: inline-block;
-      text-align: left;
-    }
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-    input {
-      width: 100%;
-      padding: 5px;
-      margin-bottom: 20px;
-    }
-    button {
-      background-color: #1e90ff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #1c86ee;
-    }
-  </style>
+</style>
 </head>
 <body>
-  <h1>ChatGPT/Midjourney订阅</h1>
-  <h2>请添加客服微信</h2>
-  <img src="jm.jpg" alt="微信二维码" width="200">
-  <p>
-    <a href="https://weidian.com/item.html?itemID=6253286770&wfr=wx&source=goods_home&ifr=itemdetail&sfr=app&code=081Snu000ksjQP1vh1200z5xDR3Snu0X&state=f2f_pay">点击这里访问我的微店店铺购买</a>
-  </p>
+    <header class="header">
+        <h1>hope-chat.shop</h1>
+    </header>
+    <div class="content">
+        <div class="product-card">
+            <img src="product-1.jpg" alt="产品1">
+            <h3>产品1名称</h3>
+            <p>产品1描述</p>
+            <a href="product1_link" target="_blank">立即购买</a>
+        </div>
+        <div class="product-card">
+            <img src="product-2.jpg" alt="产品2">
+            <h3>产品2名称</h3>
+            <p>产品2描述</p>
+            <a href="product2_link" target="_blank">立即购买</a>
+        </div>
+        <div class="product-card">
+            <img src="product-3.jpg" alt="产品3">
+            <h3>产品3名称</h3>
+            <p>产品3描述</p>
+            <a href="product3_link" target="_blank">立即购买</a>
+        </div>
+        <div class="product-card">
+            <img src="product-4.jpg" alt="产品4">
+            <h3>产品4名称</h3>
+            <p>产品4描述</p>
+            <a href="product4_link" target="_blank">立即购买</a>
+        </div>
+        <div class="product-card">
+            <img src="product-5.jpg" alt="产品5">
+            <h3>产品5名称</h3>
+            <p>产品5描述</p>
+            <a href="product5_link" target="_blank">立即购买</a>
+        </div>
+        <div class="product-card">
+            <img src="product-6.jpg" alt="产品6">
+            <h3>产品6名称</h3>
+            <p>产品6描述</p>
+            <a href="product6_link" target="_blank">立即购买</a>
+        </div>
+    </div>
+    <div class="form-section">
+        <form action="https://formspree.io/f/xpzekykz" method="POST">
+            <h2>填写表单</h2>
+            <label for="wechat">微信号或手机号:</label>
+            <input type="text" name="wechat" id="wechat" required>
+        <label for="giftcard">ChatGPT/Midjourney账号:</label>
+        <input type="text" name="giftcard" id="giftcard" required>
 
-  <section>
-    <h2>填写表单</h2>
-    <form action="https://formspree.io/f/xpzekykz" method="POST">
-      <label for="wechat">微信号或手机号:</label>
-      <input type="text" name="wechat" id="wechat" required>
-      
-      <label for="giftcard">ChatGPT/Midjourney账号:</label>
-      <input type="text" name="giftcard" id="giftcard" required>
-      
-      <label for="payment_link">付款链接或密码:</label>
-      <input type="text" name="payment_link" id="payment_link" required>
+        <label for="payment_link">付款链接或密码:</label>
+        <input type="text" name="payment_link" id="payment_link" required>
 
-      <button type="submit">提交</button>
+        <button type="submit">提交</button>
     </form>
+    <div class="wechat-section">
+        <h2>请添加客服微信</h2>
+        <img src="jm.jpg" alt="微信二维码">
+</div>
+</div>
 <section class="news-section">
-    <h2>B站跟踪</h2>
-    <ul class="news-list">
-      <li><a href="https://www.bilibili.com/video/BV1Hm4y1y7xq/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">震惊！无编程基础的中国小伙居然用gpt4独立写出了chatgpt的国内镜像网站！</a></li>
-      <li><a href="https://www.bilibili.com/video/BV1nT411p7Wh/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">《你真的毫无价值》 更适合中国宝宝体质！？</a></li>
-      <li><a href="https://www.bilibili.com/video/BV1wM4y1m74B/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">我的42秒多元宇宙</a></li>
-      <li><a href="https://www.bilibili.com/video/BV1mT411q76v/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2">我终于知道为什么马斯克联合一众科学家叫停gpt4等ai的研发了！！</a></li>
-      <li><a href="https://www.bilibili.com/video/BV1jh411V73n/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">chat GPT写出了一个什么玩意</a></li>
-      <li><a href="https://www.bilibili.com/video/BV1mM411u74i/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2">woc！文心一言居然证明了哥德巴赫猜想！</a></li>
-      <li><a href="https://www.bilibili.com/video/BV1aL411k75w/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2">蠢蠢大怨种,花200快买了一个GPT-4,结果还是假的?!</a></li>
-      <!-- ...其他新闻链接 -->
-    </ul>
-  </section>
+<h2>B站跟踪</h2>
+<ul class="news-list">
+<li><a href="https://www.bilibili.com/video/BV1Hm4y1y7xq/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">震惊！无编程基础的中国小伙居然用gpt4独立写出了chatgpt的国内镜像网站！</a></li>
+<li><a href="https://www.bilibili.com/video/BV1nT411p7Wh/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">《你真的毫无价值》 更适合中国宝宝体质！？</a></li>
+<li><a href="https://www.bilibili.com/video/BV1wM4y1m74B/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">我的42秒多元宇宙</a></li>
+<li><a href="https://www.bilibili.com/video/BV1mT411q76v/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2">我终于知道为什么马斯克联合一众科学家叫停gpt4等ai的研发了！！</a></li>
+<li><a href="https://www.bilibili.com/video/BV1jh411V73n/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">chat GPT写出了一个什么玩意</a></li>
+<li><a href="https://www.bilibili.com/video/BV1mM411u74i/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2">woc！文心一言居然证明了哥德巴赫猜想！</a></li>
+<li><a href="https://www.bilibili.com/video/BV1aL411k75w/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2">蠢蠢大怨种,花200快买了一个GPT-4,结果还是假的?!</a></li>
+<!-- ...其他新闻链接 -->
+</ul>
+</section>
+
 </body>
 </html>
