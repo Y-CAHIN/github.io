@@ -15,12 +15,12 @@
             margin: 0;
         }
 
-        .header {
-            background-color: #232f3e;
-            padding: 20px 0;
-            text-align: center;
-            color: #fff;
-        }
+.header {
+    background-color: #232f3e;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
 
         h1 {
             font-size: 36px;
@@ -34,13 +34,18 @@
             padding: 20px;
         }
 
-        .product-card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
 
         .product-card img {
             max-width: 100%;
@@ -73,18 +78,14 @@
         }
 
         .form-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
             padding: 20px;
         }
 
         form {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 20px;
-            width: 48%;
+            width: 100%;
             box-sizing: border-box;
         }
 
@@ -116,11 +117,7 @@
         }
 
         .wechat-section {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 20px;
-            width: 48%;
+            width: 100%;
             box-sizing: border-box;
         }
 
@@ -129,45 +126,54 @@
             margin-bottom: 20px;
         }
 
-    .wechat-section img {
-        max-width: 200px;
+        .wechat-section img {
+            max-width: 200px
         height: auto;
         margin-bottom: 15px;
     }
 
-    @media (max-width: 768px) {
-        .form-section {
-            flex-direction: column;
-        }
-
-        form,
-        .wechat-section {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-    }
-
-    .news-section {
-        margin-top: 20px;
-    }
+.news-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
 
     .news-section h2 {
         font-size: 24px;
         margin-bottom: 20px;
     }
 
-    .news-list {
-        list-style-type: none;
-        padding: 0;
+.news-list {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    flex-grow: 1;
+}
+
+    .news-card {
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #fff;
     }
 
-    .news-list li a {
+    .news-card a {
         text-decoration: none;
         color: #333;
+        font-size: 14px;
     }
 
-    .news-list li a:hover {
+    .news-card a:hover {
         color: #f3c416;
+    }
+
+    @media (max-width: 768px) {
+        .form-section {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
 </head>
@@ -176,37 +182,37 @@
         <h1>hope-chat.shop</h1>
     </header>
     <div class="content">
-        <div class="product-card">
+        <div class="product-card card">
             <img src="product-1.jpg" alt="产品1">
             <h3>ChatGPT</h3>
             <p>独享版PLUS会员</p>
             <a href="https://k.youshop10.com/fST1zwUP" target="_blank">立即购买</a>
         </div>
-        <div class="product-card">
+        <div class="product-card card">
             <img src="product-2.jpg" alt="产品2">
             <h3>Midjourney</h3>
             <p>基本版、标准版、高级版独享会员</p>
             <a href="https://k.youshop10.com/Z=fQoGwV" target="_blank">立即购买</a>
         </div>
-        <div class="product-card">
+        <div class="product-card card">
             <img src="product-3.jpg" alt="产品3">
             <h3>AutoGPT</h3>
             <p>部署</p>
             <a href="product3_link" target="_blank">立即购买</a>
         </div>
-        <div class="product-card">
+        <div class="product-card card">
             <img src="product-4.jpg" alt="产品4">
             <h3>NASA</h3>
             <p>联名款</p>
             <a href="https://www.nasa.gov/" target="_blank">立即购买</a>
         </div>
-        <div class="product-card">
+        <div class="product-card card">
             <img src="product-5.jpg" alt="产品5">
             <h3>SPACEX</h3>
             <p>联名款</p>
             <a href="https://www.spacex.com/" target="_blank">立即购买</a>
         </div>
-        <div class="product-card">
+        <div class="product-card card">
             <img src="product-6.jpg" alt="产品6">
             <h3>中国航天</h3>
             <p>联名款</p>
@@ -215,35 +221,37 @@
     </div>
     <div class="form-section">
         <form action="https://formspree.io/f/xpzekykz" method="POST">
-            <h2>填写表单</h2>
-            <label for="wechat">微信号或手机号:</label>
-            <input type="text" name="wechat" id="wechat" required>
-        <label for="giftcard">ChatGPT/Midjourney账号:</label>
-        <input type="text" name="giftcard" id="giftcard" required>
+<div class="card">
+<label for="name">姓名：</label>
+<input type="text" id="name" name="name" required>
+            <label for="phone">电话：</label>
+            <input type="tel" id="phone" name="phone" required>
 
-        <label for="payment_link">付款链接或密码:</label>
-        <input type="text" name="payment_link" id="payment_link" required>
+            <label for="email">邮箱：</label>
+            <input type="email" id="email" name="email" required>
 
-        <button type="submit">提交</button>
+            <button type="submit">填写表单</button>
+        </div>
     </form>
-    <div class="wechat-section">
+    <div class="wechat-section card">
         <h2>请添加客服微信</h2>
         <img src="jm.jpg" alt="微信二维码">
+    </div>
+    <div class="news-section card">
+        <h2>B站跟踪</h2>
+        <div class="news-list">
+            <div class="news-card">
+                <a href="https://www.bilibili.com/video/BV1cZ4y1S7KC">B站跟踪1</a>
+            </div>
+            <div class="news-card">
+                <a href="https://www.bilibili.com/video/BV1bK4y1W7G8">B站跟踪2</a>
+            </div>
+            <div class="news-card">
+                <a href="https://www.bilibili.com/video/BV1nM4y1M7QK">B站跟踪3</a>
+            </div>
+        </div>
+    </div>
 </div>
-</div>
-<section class="news-section">
-<h2>B站跟踪</h2>
-<ul class="news-list">
-<li><a href="https://www.bilibili.com/video/BV1Hm4y1y7xq/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">震惊！无编程基础的中国小伙居然用gpt4独立写出了chatgpt的国内镜像网站！</a></li>
-<li><a href="https://www.bilibili.com/video/BV1nT411p7Wh/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">《你真的毫无价值》 更适合中国宝宝体质！？</a></li>
-<li><a href="https://www.bilibili.com/video/BV1wM4y1m74B/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">我的42秒多元宇宙</a></li>
-<li><a href="https://www.bilibili.com/video/BV1mT411q76v/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2">我终于知道为什么马斯克联合一众科学家叫停gpt4等ai的研发了！！</a></li>
-<li><a href="https://www.bilibili.com/video/BV1jh411V73n/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2" target="_blank">chat GPT写出了一个什么玩意</a></li>
-<li><a href="https://www.bilibili.com/video/BV1mM411u74i/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2">woc！文心一言居然证明了哥德巴赫猜想！</a></li>
-<li><a href="https://www.bilibili.com/video/BV1aL411k75w/?spm_id_from=333.999.0.0&vd_source=1bf1cb1a90e13605bdfc4408e1fa79d2">蠢蠢大怨种,花200快买了一个GPT-4,结果还是假的?!</a></li>
-<!-- ...其他新闻链接 -->
-</ul>
-</section>
-
 </body>
 </html>
+```
