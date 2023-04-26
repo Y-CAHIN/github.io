@@ -1,0 +1,49 @@
+name: Scrape AI News
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  scrape-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install beautifulsoup4 requests
+
+      - name: Scrape news
+        run: |
+          python ai_news_scraper.py
+          cat news.txt | sed 's#^#<div class="news-card"><a href="#' | sed 's#$#">Link to article</a></div>#' > card.html
+          sed -i '1s/^/<div class="news-section card">\n<h2>Latest news<\/h2>\n<div class="news-list">\n/' card.html
+          echo "</div>\n</div>" >> card.html
+
+      - name: Push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update AI news"
+          commit_user_name: "GitHub Actions"
+          commit_user_email: "actions@github.com"
+          commit_author: "GitHub Actions <actions@github.com>"
+          branches: master
+          files: news.txt, card.html
+
+      - name: Deploy changes
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          force_orphan: true
+          commit_message: "Update AI news"
+          commit_user_name: "GitHub Actions"
+          commit_user_email: "actions@github.com"
