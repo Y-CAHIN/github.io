@@ -7,6 +7,23 @@
     <meta name="google-site-verification" content="qQ9iw4sOBuVc19pfhoZMVqCQ-OPcgX7ckzrXbx13NdY" />
     <title>hope-chat.shop</title>
     <style>
+        
+        .card {
+  margin-bottom: 20px; /* 添加卡片之间的下边距 */
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr; /* 在小屏幕上，卡片布局改为一列 */
+  }
+  .card {
+    margin-bottom: 0; /* 去掉卡片之间的下边距 */
+  }
+  .product-card img {
+    height: auto; /* 重置产品卡片图片高度 */
+  }
+}
+
         body {
             font-family: "Arial", sans-serif;
             background-color: #f0f0f0;
