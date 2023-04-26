@@ -7,13 +7,17 @@
     <meta name="google-site-verification" content="qQ9iw4sOBuVc19pfhoZMVqCQ-OPcgX7ckzrXbx13NdY" />
     <title>hope-chat.shop</title>
     <style>
-@media only screen 
-and (min-device-width: 2532px) 
-and (max-device-width: 2532px) 
-and (-webkit-device-pixel-ratio: 3)
-{
+@media screen and (max-width: 768px) {
+  .content {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
   .product-card {
-    min-width: 350px;
+    margin-bottom: 20px;
+  }
+  .header {
+    padding: 10px;
   }
 }
         body {
@@ -47,17 +51,11 @@ and (-webkit-device-pixel-ratio: 3)
             align-items: stretch;
         }
 
-        .card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-        }
+.card {
+  width: 90vw;
+  max-width: 300px;
+  margin: 0 auto;
+}
 
         .product-card img {
             max-width: 100%;
